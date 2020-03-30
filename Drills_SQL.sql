@@ -41,8 +41,8 @@
 --FROM vehicles;
 
 --9) Returns the year, make, model, and a text field displaying “X highway; Y city.”
-SELECT hwy || ' highway: ' || cty || ' city.', make, model, year
-FROM vehicles;
+--SELECT hwy || ' highway: ' || cty || ' city.', make, model, year
+--FROM vehicles;
 
 --10) Returns the id, make, model, and year for all records that have NULL for
 --    either the cyl or displ fields
