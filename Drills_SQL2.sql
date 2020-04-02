@@ -43,7 +43,8 @@
 ----7) For each main category, how many projects had zero backers for that category 
 ----   and the largest goal amount for that category (also for projects with zero backers)
 
---** The wording in this one confused me. The below is my best interpretation:
+----** The wording in this one confused me. The below is my best interpretation:
+
 --SELECT main_category, COUNT(backers) AS count_backers, MAX(goal) AS max_goal
 --FROM ksprojects
 --WHERE backers = 0
@@ -54,7 +55,7 @@
 ----   and return only those results for which the average USD per backer is < $50,
 ----   sorted high to low
 
---ELECT category, AVG(usd_pledged/ NULLIF (backers,0)) AS avg_USD_per_backer
+--SELECT category, AVG(usd_pledged/ NULLIF (backers,0)) AS avg_USD_per_backer
 --FROM ksprojects
 --GROUP BY category
 --HAVING AVG(usd_pledged/ NULLIF(backers, 0)) < 50
@@ -71,7 +72,7 @@
 ----10)  Total the amount ‘pledged’ for each type of currency,
 ----     grouped by its respective currency. Sort by ‘pledged’ from high to low
 
---SELECT  currency, SUM(pledged) AS sum_pledged
+--SELECT currency, SUM(pledged) AS sum_pledged
 --FROM ksprojects
 --GROUP BY currency
 --ORDER BY sum_pledged DESC;
